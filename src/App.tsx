@@ -1,13 +1,10 @@
-import { Button, Typography } from "@mui/material"
+import { Home } from "./pages/Home"
 
 function App() {
   return (
-    <main>
-      <Typography component={"h2"}>
-        this is a example
-      </Typography>
-      <Button variant="outlined" color="error">Text</Button>
-    </main>
+    <>
+      <Home />
+    </>
   )
 }
 

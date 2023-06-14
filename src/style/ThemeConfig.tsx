@@ -30,7 +30,7 @@ const theme = createTheme({
   components: {
     MuiTypography: {
       defaultProps: {
-        color: themePallete.PRIMARY
+        color: "inherit"
       }
     }
   }
