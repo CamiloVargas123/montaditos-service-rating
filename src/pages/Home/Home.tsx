@@ -1,10 +1,11 @@
-import { Box } from "@mui/material";
-import { Footer } from "./components";
+import { Stack } from "@mui/material";
+import { Footer, Header } from "./components";
 
 export default function Home() {
   return (
-    <Box component={"main"}>
+    <Stack component={"main"} justifyContent={"space-between"} height={"100vh"}>
+      <Header />
       <Footer />
-    </Box>
+    </Stack>
   )
 }
