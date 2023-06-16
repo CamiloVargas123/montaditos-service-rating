@@ -32,6 +32,22 @@ const theme = createTheme({
       defaultProps: {
         color: "inherit"
       }
+    },
+    MuiButton: {
+      defaultProps: {
+        style: { borderRadius: 10 },
+      },
+      variants: [
+        {
+          props: { color: "secondary" },
+          style: { backgroundColor: themePallete.BG, color: themePallete.PRIMARY }
+        }
+      ]
+    },
+    MuiInputBase: {
+      defaultProps: {
+        style: { borderRadius: 10 }
+      }
     }
   }
 });
