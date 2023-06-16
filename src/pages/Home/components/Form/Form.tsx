@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { StepContext } from "../../provider";
 import { Step1 } from "./components/Steps";
+import Step2 from "./components/Steps/Step2";
 
 export type ValuesForm = {
   invoice: number
@@ -10,8 +11,7 @@ export type ValuesForm = {
 }
 
 export default function Form() {
-  const { register, handleSubmit, formState: { errors }, trigger } = useForm<ValuesForm>()
-
+  const { register, handleSubmit, formState: { errors }, trigger, setValue, getValues } = useForm<ValuesForm>()
   const { currentStep } = useContext(StepContext)
 
   function onSubmit(values: ValuesForm) {
@@ -31,10 +31,17 @@ export default function Form() {
         error={Boolean(errors.invoice)}
       />
     </Step1>,
+    <Step2 setValue={setValue} trigger={trigger} selectedValue={getValues("experienceRating")} />,
   ]
 
   return (
-    <Stack component={"form"} margin={"20px 60px"} alignItems={"center"} onSubmit={handleSubmit(onSubmit)}>
+    <Stack
+      component={"form"}
+      margin={"20px 60px"}
+      alignItems={"flex-end"}
+      spacing={10}
+      onSubmit={handleSubmit(onSubmit)}
+    >
       {steps[currentStep]}
     </Stack>
   )
