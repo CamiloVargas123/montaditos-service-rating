@@ -5,12 +5,14 @@ import { StepProvider } from "./provider";
 
 export default function Home() {
   return (
-    <StepProvider>
-      <Stack component={"main"} justifyContent={"space-between"} height={"100vh"}>
-        <Header />
-        <Form />
-        <Footer />
-      </Stack>
-    </StepProvider>
+    <Stack component={"main"} justifyContent={"space-between"} height={"100vh"}>
+      <Header />
+      <StepProvider>
+        <>
+          <Form />
+          <Footer />
+        </>
+      </StepProvider>
+    </Stack>
   )
 }
