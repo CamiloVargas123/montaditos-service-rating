@@ -34,7 +34,13 @@ export default function Step2({ setValue, trigger, selectedValue }: Props) {
         src={`https://www.lavozdelsur.es/uploads/s1/94/52/86/montaditos.jpeg?w=400&fit=crop&auto=format`}
         alt={"Montaditos image"}
         loading="eager"
-        width={"400px"}
+        style={{
+          height: '300px',
+          width: '400px',
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+        }}
       />
       <Stack spacing={8} justifyContent={"space-between"} height={"100%"}>
         <Stack spacing={2}>
@@ -46,6 +52,7 @@ export default function Step2({ setValue, trigger, selectedValue }: Props) {
                   key={key}
                   variant='contained'
                   color={key === selectedValue ? 'secondary' : 'primary'}
+                  disabled={key === selectedValue}
                   fullWidth
                   onClick={() => handleClick(key)}
                 >
