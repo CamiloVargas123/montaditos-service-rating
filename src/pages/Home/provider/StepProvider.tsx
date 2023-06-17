@@ -5,11 +5,13 @@ type Step = {
   currentStep: number,
   back: () => void
   next: () => void
+  backToFirtStep: () => void
 }
 const initialValue: Step = {
   currentStep: 0,
   back: () => { },
-  next: () => { }
+  next: () => { },
+  backToFirtStep: () => { }
 }
 
 export const StepContext = createContext(initialValue)
@@ -30,11 +32,15 @@ export function StepProvider({ children }: Props) {
       return i - 1
     })
   }
+  function backToFirtStep() {
+    setCurrentStep(0)
+  }
 
   const value: Step = {
     currentStep,
     back,
-    next
+    next,
+    backToFirtStep
   }
   return <StepContext.Provider value={value}>{children}</StepContext.Provider>
 }
