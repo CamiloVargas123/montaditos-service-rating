@@ -34,7 +34,7 @@ const customIcons: {
   },
 }
 
-const StyledIconButton = styled(IconButton)(({ theme }) => ({
+export const StyledIconButton = styled(IconButton)(({ theme }) => ({
   fontSize: "5rem",
   transition: 'transform 0.2s',
   '&:hover': {
@@ -85,7 +85,7 @@ export default function Step3({ setValue, trigger, selectedValue }: Props) {
                   aria-label={value.label}
                   key={key}
                   onClick={() => handleClick(Number(key))}
-                  disabled={selectedValue === Number(key + 1)}
+                  disabled={selectedValue === Number(key)}
                 >
                   {value.icon}
                 </StyledIconButton>

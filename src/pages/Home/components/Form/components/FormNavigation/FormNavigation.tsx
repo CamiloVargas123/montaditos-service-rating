@@ -10,7 +10,7 @@ export default function FormNavigation({ disabledPrevious, isLastStep }: Props) 
   const { next, back } = useContext(StepContext)
 
   function handleClick() {
-    next()
+    if (!isLastStep) next()
   }
 
   return (
