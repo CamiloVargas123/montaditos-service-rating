@@ -17,13 +17,13 @@ export default function Logo() {
   return (
     <ContainerInfo>
       <Stack alignItems={"center"}>
-        <Typography fontSize={"60px"} lineHeight={0.9}>100</Typography>
+        <Typography fontSize={"5rem"} lineHeight={0.9}>100</Typography>
         <Stack direction={"row"} alignItems={"start"}>
-          <Typography>Montaditos</Typography>
-          <Typography component={"span"} fontSize={"8px"}>®</Typography>
+          <Typography fontSize={"2rem"}>Montaditos</Typography>
+          <Typography component={"span"} fontSize={".8rem"} lineHeight={"2rem"}>®</Typography>
         </Stack>
       </Stack>
-      <Typography fontSize={"12px"}>/ Cervecería /</Typography>
+      <Typography fontSize={".8rem"}>/ Cervecería /</Typography>
     </ContainerInfo>
   )
 }

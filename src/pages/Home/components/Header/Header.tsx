@@ -13,7 +13,7 @@ export default function Header() {
       <Logo />
       <Stack width={"100%"}>
         <Bar />
-        <Typography textAlign={"end"} fontSize={"40px"} letterSpacing={2} marginRight={2}>Cuéntanos tu opinión</Typography>
+        <Typography textAlign={"end"} fontSize={"3rem"} letterSpacing={2} marginRight={2}>Cuéntanos tu opinión</Typography>
       </Stack>
     </Stack>
   )
