@@ -1,10 +1,9 @@
 import { IconButton, Stack, SvgIcon, Typography, styled } from '@mui/material';
-import { FormNavigation } from '../FormNavigation';
-import { IconRate1, IconRate2, IconRate3, IconRate4, IconRate5 } from './assets';
 import { useContext } from 'react';
-import { StepContext } from '../../../../provider';
 import { UseFormSetValue, UseFormTrigger } from 'react-hook-form';
+import { StepContext } from '../../../../provider';
 import { ValuesForm } from '../../Form';
+import { IconRate1, IconRate2, IconRate3, IconRate4, IconRate5 } from './assets';
 
 const customIcons: {
   [index: string]: {
@@ -62,39 +61,36 @@ export default function Step3({ setValue, trigger, selectedValue }: Props) {
   }
 
   return (
-    <Stack direction={"row"} spacing={20} width={"100%"} alignItems={"center"}>
+    <>
       <img
         src={`https://media-cdn.tripadvisor.com/media/photo-s/19/8b/bc/14/img-20191009-202243-633.jpg?w=400&fit=crop&auto=format`}
         alt={"Montaditos image"}
         loading="eager"
         style={{
-          height: '300px',
-          width: '400px',
+          width: '100%',
+          height: "255px",
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
         }}
       />
-      <Stack spacing={8} justifyContent={"space-between"} height={"100%"}>
-        <Stack spacing={2}>
-          <Typography fontSize={"25px"} fontWeight={700}>¿Que tal te pareció el servicio prestado por nuestros colaboradores?</Typography>
-          <Stack direction={"row"} spacing={2} width={"100%"} justifyContent={"space-between"} >
-            {
-              Object.entries(customIcons).map(([key, value]) => (
-                <StyledIconButton
-                  aria-label={value.label}
-                  key={key}
-                  onClick={() => handleClick(Number(key))}
-                  disabled={selectedValue === Number(key)}
-                >
-                  {value.icon}
-                </StyledIconButton>
-              ))
-            }
-          </Stack>
+      <Stack spacing={2}>
+        <Typography fontSize={"25px"} fontWeight={700} textAlign={"center"}>Califica como fue tu experiencia gastronómica</Typography>
+        <Stack direction={"row"} spacing={2} width={"100%"} justifyContent={"space-evenly"} >
+          {
+            Object.entries(customIcons).map(([key, value]) => (
+              <StyledIconButton
+                aria-label={value.label}
+                key={key}
+                onClick={() => handleClick(Number(key))}
+                disabled={selectedValue === Number(key)}
+              >
+                {value.icon}
+              </StyledIconButton>
+            ))
+          }
         </Stack>
-        <FormNavigation />
       </Stack>
-    </Stack>
+    </>
   )
 }

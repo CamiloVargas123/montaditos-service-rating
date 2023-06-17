@@ -3,7 +3,6 @@ import { useContext } from 'react';
 import { UseFormSetValue, UseFormTrigger } from 'react-hook-form';
 import { StepContext } from '../../../../provider';
 import { ValuesForm } from '../../Form';
-import { FormNavigation } from '../FormNavigation';
 
 const valuesSelect = {
   bad: "Malo",
@@ -29,42 +28,39 @@ export default function Step2({ setValue, trigger, selectedValue }: Props) {
   }
 
   return (
-    <Stack direction={"row"} spacing={20} width={"100%"} alignItems={"center"}>
+    <>
       <img
         src={`https://www.lavozdelsur.es/uploads/s1/94/52/86/montaditos.jpeg?w=400&fit=crop&auto=format`}
         alt={"Montaditos image"}
         loading="eager"
         style={{
-          height: '300px',
-          width: '400px',
+          width: '100%',
+          height: "255px",
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
         }}
       />
-      <Stack spacing={8} justifyContent={"space-between"} height={"100%"}>
-        <Stack spacing={2}>
-          <Typography fontSize={"25px"} fontWeight={700}>¿Que tal te pareció el servicio prestado por nuestros colaboradores?</Typography>
-          <Stack direction={"row"} spacing={2} >
-            {
-              Object.entries(valuesSelect).map(([key, value]) => (
-                <Button
-                  key={key}
-                  variant='contained'
-                  color={key === selectedValue ? 'secondary' : 'primary'}
-                  disabled={key === selectedValue}
-                  fullWidth
-                  onClick={() => handleClick(key)}
-                >
-                  {value}
-                </Button>
-              ))
-            }
-          </Stack>
+      <Stack spacing={2}>
+        <Typography fontSize={"25px"} fontWeight={700} textAlign={"center"}>¿Que tal te pareció el servicio prestado por nuestros colaboradores?</Typography>
+        <Stack direction={"row"} spacing={2} >
+          {
+            Object.entries(valuesSelect).map(([key, value]) => (
+              <Button
+                key={key}
+                variant='contained'
+                color={key === selectedValue ? 'secondary' : 'primary'}
+                disabled={key === selectedValue}
+                fullWidth
+                onClick={() => handleClick(key)}
+              >
+                {value}
+              </Button>
+            ))
+          }
         </Stack>
-        <FormNavigation />
       </Stack>
-    </Stack>
+    </>
   )
 }
 

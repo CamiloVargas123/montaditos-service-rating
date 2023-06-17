@@ -18,23 +18,20 @@ export default function Finish({ reset }: Props) {
   }, [backToFirtStep, reset])
 
   return (
-    <Stack alignItems={"center"}>
-      <Stack width={"600px"}>
-        <Typography textTransform={"uppercase"} fontSize={"4rem"} fontWeight={700} textAlign={"center"}>muchas gracias</Typography>
-        <Typography
-          textTransform={"uppercase"}
-          padding={2}
-          bgcolor={theme.palette.primary.main}
-          color={"white"}
-          fontWeight={700}
-          fontSize={"3rem"}
-          textAlign={"center"}
-          borderRadius={"30px"}
-        >
-          Tu opinión es muy importante para nosotros
-        </Typography>
-
-      </Stack>
+    <Stack width={"600px"} gridColumn={'1 / span 2'} margin={"auto"}>
+      <Typography textTransform={"uppercase"} fontSize={"4rem"} fontWeight={700} textAlign={"center"}>muchas gracias</Typography>
+      <Typography
+        textTransform={"uppercase"}
+        padding={2}
+        bgcolor={theme.palette.primary.main}
+        color={"white"}
+        fontWeight={700}
+        fontSize={"3rem"}
+        textAlign={"center"}
+        borderRadius={"30px"}
+      >
+        Tu opinión es muy importante para nosotros
+      </Typography>
     </Stack>
   )
 }

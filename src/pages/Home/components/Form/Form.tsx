@@ -1,7 +1,8 @@
-import { Stack, TextField } from "@mui/material";
+import { Box, Stack, TextField } from "@mui/material";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { StepContext } from "../../provider";
+import { FormNavigation } from "./components/FormNavigation";
 import { Finish, Step1, Step2, Step3, Step4 } from "./components/Steps";
 
 export type ValuesForm = {
@@ -40,13 +41,26 @@ export default function Form() {
   ]
 
   return (
-    <Stack
+    <Box
+      display={"grid"}
+      height={"100%"}
+      columnGap={10}
+      alignItems={"start"}
+      gridTemplateColumns={".4fr .6fr"}
       component={"form"}
-      margin={"20px 60px"}
-      spacing={10}
+      padding={"30px 60px"}
       onSubmit={handleSubmit(onSubmit)}
     >
       {steps[currentStep]}
-    </Stack>
+      {
+        currentStep > 0 && currentStep < steps.length - 1 &&
+        <>
+          <Box />
+          <Stack height={"100%"} justifyContent={"flex-end"}>
+            <FormNavigation isLastStep={currentStep === steps.length - 1} />
+          </Stack>
+        </>
+      }
+    </Box>
   )
 }
