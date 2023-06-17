@@ -45,6 +45,7 @@ export default function Form() {
       display={"grid"}
       height={"100%"}
       columnGap={10}
+      rowGap={currentStep > 0 ? 5 : 0}
       alignItems={"start"}
       gridTemplateColumns={".4fr .6fr"}
       component={"form"}

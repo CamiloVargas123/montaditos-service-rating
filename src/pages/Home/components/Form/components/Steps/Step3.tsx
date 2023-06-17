@@ -42,6 +42,9 @@ export const StyledIconButton = styled(IconButton)(({ theme }) => ({
   },
   '&:disabled': {
     backgroundColor: theme.palette.primary.main
+  },
+  [theme.breakpoints.down('lg')]: {
+    fontSize: "3rem"
   }
 }));
 
@@ -66,13 +69,8 @@ export default function Step3({ setValue, trigger, selectedValue }: Props) {
         src={`https://media-cdn.tripadvisor.com/media/photo-s/19/8b/bc/14/img-20191009-202243-633.jpg?w=400&fit=crop&auto=format`}
         alt={"Montaditos image"}
         loading="eager"
-        style={{
-          width: '100%',
-          height: "255px",
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-        }}
+        width={"100%"}
+        style={{ objectFit: "cover", maxHeight: "400px" }}
       />
       <Stack spacing={2}>
         <Typography fontSize={"25px"} fontWeight={700} textAlign={"center"}>Califica como fue tu experiencia gastronómica</Typography>

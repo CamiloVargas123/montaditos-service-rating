@@ -33,13 +33,8 @@ export default function Step2({ setValue, trigger, selectedValue }: Props) {
         src={`https://www.lavozdelsur.es/uploads/s1/94/52/86/montaditos.jpeg?w=400&fit=crop&auto=format`}
         alt={"Montaditos image"}
         loading="eager"
-        style={{
-          width: '100%',
-          height: "255px",
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-        }}
+        width={"100%"}
+        style={{objectFit: "cover", maxHeight: "400px"}}
       />
       <Stack spacing={2}>
         <Typography fontSize={"25px"} fontWeight={700} textAlign={"center"}>¿Que tal te pareció el servicio prestado por nuestros colaboradores?</Typography>

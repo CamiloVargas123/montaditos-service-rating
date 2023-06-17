@@ -6,7 +6,7 @@ import { StepContext } from '../../provider';
 const ImageOverlayContainer = styled('div')(() => ({
   position: 'relative',
   width: '100%',
-  height: '30vh',
+  minHeight: '160px',
   backgroundImage: 'url(https://fotografias.larazon.es/clipping/cmsimages02/2022/09/05/32132660-464F-445D-B600-76932DF94D5F/98.jpg?crop=1600,900,x0,y0&width=1900&height=1069&optimize=low&format=webply)',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
