@@ -2,7 +2,7 @@ import { Stack, TextField } from "@mui/material";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { StepContext } from "../../provider";
-import { Step1, Step2, Step3, Step4 } from "./components/Steps";
+import { Finish, Step1, Step2, Step3, Step4 } from "./components/Steps";
 
 export type ValuesForm = {
   invoice: number
@@ -12,7 +12,7 @@ export type ValuesForm = {
 }
 
 export default function Form() {
-  const { register, handleSubmit, formState: { errors }, trigger, setValue, getValues } = useForm<ValuesForm>()
+  const { register, handleSubmit, formState: { errors }, trigger, setValue, getValues, reset } = useForm<ValuesForm>()
   const { currentStep, next } = useContext(StepContext)
 
   function onSubmit(values: ValuesForm) {
@@ -35,14 +35,14 @@ export default function Form() {
     </Step1>,
     <Step2 setValue={setValue} trigger={trigger} selectedValue={getValues("experienceRating")} />,
     <Step3 setValue={setValue} trigger={trigger} selectedValue={getValues("rating")} />,
-    <Step4 setValue={setValue} selectedValue={getValues("recomendation")} />
+    <Step4 setValue={setValue} selectedValue={getValues("recomendation")} />,
+    <Finish reset={reset} />
   ]
 
   return (
     <Stack
       component={"form"}
       margin={"20px 60px"}
-      alignItems={"flex-end"}
       spacing={10}
       onSubmit={handleSubmit(onSubmit)}
     >
